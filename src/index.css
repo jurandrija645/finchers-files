@@ -1,0 +1,35 @@
+.App {
+  padding: 0;
+}
+
+.Header {
+  border-bottom: 1px solid #c1baa1;
+}
+
+.Sidebar {
+  width: 150px;
+  margin: 5px;
+  position: sticky;
+  top: 62px;
+  align-self: flex-start;
+  align-items: start;
+}
+
+.Sidebar .nav-item {
+  width: 100%;
+  margin: 2px;
+}
+
+.Sidebar a {
+  color: #444;
+  padding-left: 5px;
+}
+
+.Sidebar a:hover {
+  background-color: #c1baa1;
+  border-radius: 5px;
+}
+
+.Sidebar a:visited {
+  color: #444;
+}
