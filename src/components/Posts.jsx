@@ -1,37 +1,32 @@
-import React from "react";
+import React, { use } from "react";
+import Spinner from "react-bootstrap/Spinner";
+import { useState, useEffect } from "react";
+import Post from "./Post";
 
-const posts = [
-  {
-    id: 1,
-    text: "Movie One",
-    timestamp: "a minute ago",
-    author: {
-      username: "Susan",
-    },
-  },
-  {
-    id: 2,
-    text: "Movie Two",
-    timestamp: "an hour ago",
-    author: {
-      username: "John",
-    },
-  },
-];
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
 
 export default function Posts() {
+  const [posts, setPosts] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(BASE_API_URL + "/api/feed");
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        setPosts(result.data);
+      } else {
+        setPosts(null);
+      }
+    })();
+  }, []);
   return (
     <>
-      {posts.length === 0 ? (
-        <p>No movies yet</p>
+      {posts === undefined ? (
+        <Spinner animation="border" />
       ) : (
         posts.map((post) => {
-          return (
-            <p key={post.id}>
-              <b>{post.author.username}</b> &mdash; {post.timestamp} <br />
-              {post.text}
-            </p>
-          );
+          return <Post key={post.id} post={post} />;
         })
       )}
     </>
