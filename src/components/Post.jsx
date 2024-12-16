@@ -1,6 +1,7 @@
 import Stack from "react-bootstrap/Stack";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
+import TimeAgo from "./TimeAgo";
 
 export default function Post({ post }) {
   return (
@@ -12,7 +13,7 @@ export default function Post({ post }) {
             {post.author.username}
           </Link>
           &nbsp; &mdash; &nbsp;
-          {post.timestamp}
+          <TimeAgo isoDate={post.timestamp}/>
         </p>
 
         <p>{post.text}</p>
