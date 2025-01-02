@@ -13,9 +13,8 @@ export default function Post({ post }) {
             {post.author.username}
           </Link>
           &nbsp; &mdash; &nbsp;
-          <TimeAgo isoDate={post.timestamp}/>
+          <TimeAgo isoDate={post.timestamp} />
         </p>
-
         <p>{post.text}</p>
       </div>
     </Stack>

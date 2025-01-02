@@ -60,3 +60,9 @@
 .Post a:visited {
   color: #d7d3bf;
 }
+
+.more {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+}
