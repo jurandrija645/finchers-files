@@ -1,0 +1,10 @@
+// 1. Import Bootstrap's required Sass files for variables & functions
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// 2. Override the relevant variables BEFORE importing the main "bootstrap" file
+$primary: #a59d84; // Set your custom "primary" color
+
+// 3. Import the rest of Bootstrap to apply your variable changes
+@import "node_modules/bootstrap/scss/bootstrap";

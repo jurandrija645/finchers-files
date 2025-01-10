@@ -7,7 +7,7 @@ import FeedPage from "./pages/FeedPage";
 import ExplorePage from "./pages/ExplorePage";
 import LoginPage from "./pages/LoginPage";
 import UserPage from "./pages/UserPage";
-import  ApiProvider  from "./contexts/ApiProvider";
+import ApiProvider from "./contexts/ApiProvider";
 
 const router = createBrowserRouter([
   {
@@ -33,10 +33,10 @@ export default function App() {
 
   return (
     <ApiProvider>
-    <Container fluid className="App">
-      <Header />
-      <RouterProvider router={router} />
-    </Container>
+      <Container fluid className="App">
+        <Header />
+        <RouterProvider router={router} />
+      </Container>
     </ApiProvider>
   );
 }
