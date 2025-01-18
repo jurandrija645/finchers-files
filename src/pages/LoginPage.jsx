@@ -22,6 +22,7 @@ export default function LoginPage() {
     {
       errors.password = "You must enter your password!";
     }
+    console.log("Before state");
     setFormErrors(errors);
     setInterval(alert("wait"), 3000);
     if(Object.keys(errors).length > 0){
@@ -29,7 +30,8 @@ export default function LoginPage() {
     }
 
     ev.preventDefault();
-    console.log("Komitanje forme");
+    
+    console.log("After state");
   }
 
   useEffect(() => {
