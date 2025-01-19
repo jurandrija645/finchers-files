@@ -5,16 +5,16 @@ export default class FinchersApiClient {
     this.base_url =  BASE_API_URL + '/api';
   }
 
-  async request(options) {
-    let query = new URLSearchParams(options.query || {}).toString();
+  async request(method, url, queryOption, ...options) {
+    let query = new URLSearchParams(queryOption || {}).toString();
     if (query !== '') {
       query = '?' + query;
     }
 
     let response;
     try {
-      response = await fetch(this.base_url + options.url + query, {
-        method: options.method,
+      response = await fetch(this.base_url + url + query, {
+        method: method,
         headers: {
           'Content-Type': 'application/json',
           ...options.headers,

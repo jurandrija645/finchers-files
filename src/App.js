@@ -8,6 +8,7 @@ import ExplorePage from "./pages/ExplorePage";
 import LoginPage from "./pages/LoginPage";
 import UserPage from "./pages/UserPage";
 import ApiProvider from "./contexts/ApiProvider";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/user/:username",
     element: <UserPage />,
   },
+  {
+    path: "/register",
+    element: <RegistrationPage />,
+  }
 ]);
 
 export default function App() {
