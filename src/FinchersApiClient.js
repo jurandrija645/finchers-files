@@ -5,7 +5,7 @@ export default class FinchersApiClient {
     this.base_url =  BASE_API_URL + '/api';
   }
 
-  async request(method, url, queryOption, ...options) {
+  async request(method, url, queryOption, body, ...options) {
     let query = new URLSearchParams(queryOption || {}).toString();
     if (query !== '') {
       query = '?' + query;
